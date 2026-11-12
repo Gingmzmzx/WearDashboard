@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">WearDashboard icon</title>
+  <desc id="desc">A square smartwatch with a mint approval check and an amber pending dot on a deep green background.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0A1710"/>
+      <stop offset="1" stop-color="#040907"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="45%" r="65%">
+      <stop offset="0" stop-color="#1F6744" stop-opacity="0.85"/>
+      <stop offset="0.62" stop-color="#0C1E15" stop-opacity="0.4"/>
+      <stop offset="1" stop-color="#050A08" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="check" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0" stop-color="#B7FFD9"/>
+      <stop offset="1" stop-color="#E6FFF2"/>
+    </linearGradient>
+    <filter id="softGlow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="10"/>
+    </filter>
+    <filter id="dotGlow" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="7"/>
+    </filter>
+  </defs>
+
+  <rect width="512" height="512" rx="112" fill="url(#bg)"/>
+  <rect width="512" height="512" rx="112" fill="url(#glow)"/>
+
+  <g fill="none" stroke="#78F0AF">
+    <circle cx="256" cy="256" r="180" stroke-opacity="0.12" stroke-width="1.6"/>
+    <circle cx="256" cy="256" r="225" stroke-opacity="0.07" stroke-width="1.2"/>
+    <circle cx="256" cy="256" r="265" stroke-opacity="0.04" stroke-width="1"/>
+  </g>
+  <g fill="none" stroke="#67E8A5" stroke-opacity="0.12" stroke-width="1.6" stroke-linecap="round">
+    <path d="M66 98v39M66 98h39M446 98v39M446 98h-39M66 414v-39M66 414h39M446 414v-39M446 414h-39"/>
+  </g>
+
+  <g>
+    <rect x="150" y="135" width="212" height="242" rx="70" fill="none" stroke="#67E8A5" stroke-opacity="0.35" stroke-width="28" filter="url(#softGlow)"/>
+    <rect x="150" y="135" width="212" height="242" rx="70" fill="#0A1812" fill-opacity="0.94" stroke="#67E8A5" stroke-width="19"/>
+    <rect x="169" y="155" width="174" height="202" rx="56" fill="none" stroke="#BEFEE0" stroke-opacity="0.12" stroke-width="1.3"/>
+
+    <rect x="358" y="222" width="36" height="65" rx="14" fill="#67E8A5"/>
+    <rect x="363" y="231" width="22" height="47" rx="8" fill="#16402D"/>
+
+    <path d="M202.5 252.5 L245 295 L326 204" fill="none" stroke="#67E8A5" stroke-opacity="0.28" stroke-width="54" stroke-linecap="round" stroke-linejoin="round" filter="url(#softGlow)"/>
+    <path d="M202.5 252.5 L245 295 L326 204" fill="none" stroke="url(#check)" stroke-width="39" stroke-linecap="round" stroke-linejoin="round"/>
+
+    <circle cx="345" cy="172" r="38" fill="#F3BC55" fill-opacity="0.3" filter="url(#dotGlow)"/>
+    <circle cx="345" cy="172" r="31" fill="#0A1812"/>
+    <circle cx="345" cy="172" r="25" fill="#F3BC55"/>
+    <circle cx="334.5" cy="161.5" r="6.5" fill="#FFE5AD" fill-opacity="0.8"/>
+  </g>
+</svg>

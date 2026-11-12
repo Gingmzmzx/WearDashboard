@@ -1,5 +1,9 @@
 # Watch Agent Dashboard
 
+<p align="center">
+  <img src="branding/icon-square-1024.png" width="120" alt="WearDashboard icon">
+</p>
+
 方形 Android 手表和手机上的 AI Agent 面板。设备通过一条 WebSocket 长连接接收 Agent 的权限请求、提问和任务结果，并把用户的允许/拒绝决定实时回传。
 
 同一 APK 自适应两种布局：手机自动使用控制台式卡片界面（快速审批、分组列表），手表使用大触控目标的方形表盘界面。服务端是独立的 Python + FastAPI 网关，Agent 插件/DeepSeek harness 通过 REST API 接入。

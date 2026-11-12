@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="bg">#FF060807</color>
+    <color name="surface">#FF101613</color>
+    <color name="surface_alt">#FF16201A</color>
+    <color name="border">#FF24332B</color>
+    <color name="text">#FFEFF7F2</color>
+    <color name="text_muted">#FF80958A</color>
+    <color name="accent">#FF67E8A5</color>
+    <color name="accent_dim">#FF123324</color>
+    <color name="warn">#FFF3BC55</color>
+    <color name="warn_dim">#FF332711</color>
+    <color name="danger">#FFF07C7C</color>
+    <color name="danger_dim">#FF331A1A</color>
+    <color name="info">#FF82B4FF</color>
+    <color name="info_dim">#FF16263B</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+</resources>

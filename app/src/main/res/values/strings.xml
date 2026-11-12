@@ -1,0 +1,181 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">Watch Agent</string>
+
+    <string name="status_online">已连接</string>
+    <string name="status_connecting">连接中</string>
+    <string name="status_reconnecting">重连中</string>
+    <string name="status_disconnected">未连接</string>
+    <string name="status_auth_failed">认证失败</string>
+    <string name="status_unconfigured">未配置</string>
+
+    <string name="header_agent">AGENT</string>
+    <string name="label_pending">待处理</string>
+    <string name="label_agents">代理状态</string>
+    <string name="label_recent">最近完成</string>
+    <string name="label_waiting">等待处理</string>
+    <string name="label_all_clear">一切正常</string>
+    <string name="label_no_actions">没有需要处理的事项</string>
+    <string name="label_waiting_approval">项需要你决定</string>
+    <string name="label_online_idle">Agent 在线，没有待处理事项</string>
+    <string name="label_offline">当前离线</string>
+    <string name="label_cache">显示缓存数据</string>
+
+    <string name="setup_title">连接 Agent</string>
+    <string name="setup_body">配置服务端地址与访问 Token，手表会实时接收审批、提问和任务结果。</string>
+    <string name="action_configure">配置服务器</string>
+    <string name="action_settings">设置</string>
+    <string name="action_back">返回</string>
+    <string name="action_reconnect">重试</string>
+    <string name="action_open">打开处理</string>
+    <string name="action_save">保存并连接</string>
+    <string name="action_disconnect">断开连接</string>
+    <string name="action_close">返回</string>
+
+    <string name="label_server_url">服务器地址</string>
+    <string name="label_token">访问 Token</string>
+    <string name="label_device_name">设备名称</string>
+    <string name="label_connection_status">连接状态</string>
+    <string name="hint_server_url">wss://example.com/agent</string>
+    <string name="hint_token">Bearer Token</string>
+    <string name="hint_device_name">我的手表</string>
+    <string name="label_protocol">协议 v%1$d · %2$s</string>
+    <string name="label_device_id">设备 ID：%1$s</string>
+    <string name="settings_security_note">建议使用 wss:// 加密连接。Token 会使用本机密钥加密存储。</string>
+    <string name="settings_notifications_note">通知权限未开启，审批提醒可能无法显示。</string>
+    <string name="settings_title">设置</string>
+
+    <string name="error_url">地址需以 ws:// 或 wss:// 开头</string>
+    <string name="error_credentials">请填写服务器地址和 Token</string>
+    <string name="error_secure_store">Token 无法安全保存，请重试</string>
+    <string name="error_connect_hint">请检查地址、网络与 Token</string>
+    <string name="error_offline_action">未连接服务器，无法处理</string>
+    <string name="error_bad_server">服务器返回了无法识别的数据</string>
+    <string name="error_fgs_timeout">后台连接已达系统时长限制，打开应用可恢复</string>
+    <string name="error_resync">状态序号不连续，正在重新同步</string>
+    <string name="toast_saved">已保存，正在连接</string>
+    <string name="toast_sent">决定已发送</string>
+    <string name="toast_request_gone">请求已被处理</string>
+    <string name="toast_disconnected">已断开连接</string>
+    <string name="toast_provision_saved">配置已保存</string>
+    <string name="toast_provision_failed">配置保存失败：%1$s</string>
+
+    <string name="type_permission">权限请求</string>
+    <string name="type_question">提问</string>
+    <string name="risk_high">高风险</string>
+    <string name="risk_medium">中风险</string>
+    <string name="risk_low">低风险</string>
+    <string name="expiry_remaining_sec">剩 %1$d 秒</string>
+    <string name="expiry_remaining_min">剩 %1$d 分钟</string>
+    <string name="expiry_expired">已过期</string>
+    <string name="expiry_none">待处理</string>
+    <string name="hold_hint">按住允许按钮满 1 秒才会提交</string>
+    <string name="hold_progress_hint">按住确认</string>
+    <string name="request_footer">你的选择会立即发送给 Agent</string>
+    <string name="request_footer_high">高风险操作，需要按住确认</string>
+    <string name="request_footer_offline">未连接服务器，暂时无法处理</string>
+    <string name="request_footer_expired">此请求已过期</string>
+    <string name="question_no_options">服务端未提供可选答案</string>
+    <string name="recent_empty">暂无完成记录</string>
+    <string name="ago_just_now">刚刚</string>
+    <string name="ago_minutes">%1$d 分钟前</string>
+    <string name="ago_hours">%1$d 小时前</string>
+
+    <string name="agent_status_working">工作中</string>
+    <string name="agent_status_waiting">等待操作</string>
+    <string name="agent_status_idle">空闲</string>
+    <string name="agent_status_error">出错</string>
+    <string name="agent_status_offline">离线</string>
+    <string name="agent_status_unknown">未知</string>
+    <string name="unknown_agent">Agent</string>
+    <string name="outbox_pending">%1$d 个决定等待发送</string>
+
+    <string name="connection_lost_title">连接已断开</string>
+    <string name="connection_reconnecting_title">正在重新连接</string>
+    <string name="connection_auth_title">认证失败</string>
+    <string name="cached_hint">当前展示本地缓存，恢复连接后自动同步</string>
+
+    <string name="task_done">任务完成</string>
+    <string name="task_failed">任务失败</string>
+    <string name="task_cancelled">任务已取消</string>
+    <string name="task_summary_fallback">任务已结束</string>
+
+    <string name="notif_channel_actions">Agent 请求</string>
+    <string name="notif_channel_actions_desc">需要审批或回答的 Agent 请求</string>
+    <string name="notif_channel_events">Agent 动态</string>
+    <string name="notif_channel_events_desc">任务完成等后台动态</string>
+    <string name="notif_channel_service">Agent 连接</string>
+    <string name="notif_channel_service_desc">保持与服务端的后台连接</string>
+    <string name="notif_permission_title">%1$s · 权限请求</string>
+    <string name="notif_question_title">%1$s · 提问</string>
+    <string name="notif_task_title">任务完成 · %1$s</string>
+    <string name="notif_task_failed_title">任务失败 · %1$s</string>
+    <string name="notif_task_cancelled_title">任务取消 · %1$s</string>
+    <string name="notif_service_online">Agent 在线</string>
+    <string name="notif_service_connecting">正在连接 Agent…</string>
+    <string name="notif_service_reconnecting">正在重连 Agent…</string>
+    <string name="notif_service_auth">Agent 认证失败</string>
+    <string name="notif_service_offline">Agent 已断开</string>
+    <string name="notif_service_text_pending">%1$d 项待处理</string>
+    <string name="notif_service_text_idle">没有待处理事项</string>
+    <string name="notif_action_stop">断开</string>
+    <string name="notif_action_open">打开</string>
+    <string name="notif_action_expired">请求已过期</string>
+    <string name="notif_action_offline">未连接，请打开应用处理</string>
+    <string name="notif_action_queued">已记录决定，重连后发送</string>
+
+    <string name="notification_permission_hint">允许通知后可接收审批提醒</string>
+    <string name="notification_permission_denied">未获得通知权限</string>
+    <string name="content_desc_settings">设置</string>
+    <string name="content_desc_back">返回</string>
+    <string name="content_desc_approve_hold">%1$s，按住一秒确认</string>
+    <string name="separator_dot">" · "</string>
+    <string name="unknown_server" translatable="false">—</string>
+    <string name="no_detail" translatable="false">—</string>
+    <string name="protocol_version" translatable="false">v1</string>
+    <string name="notification_channel_prefix" translatable="false">watch_agent</string>
+
+    <string name="phone_eyebrow">AGENT DECK</string>
+    <string name="phone_title">Agent 控制台</string>
+    <string name="phone_subtitle">远程审批与任务动态</string>
+    <string name="phone_hero_pending">需要你决定</string>
+    <string name="phone_hero_pending_unit">项待处理</string>
+    <string name="phone_hero_idle">一切正常</string>
+    <string name="phone_hero_idle_body">所有 Agent 运行正常，没有需要处理的事项</string>
+    <string name="phone_hero_offline">当前无法连接 Agent</string>
+    <string name="phone_hero_offline_body">待处理请求会保留，恢复连接后同步</string>
+    <string name="phone_hero_unconfigured">连接你的 Agent Gateway</string>
+    <string name="phone_hero_unconfigured_body">填写服务器地址和 Token，开始接收权限请求、提问和任务结果。</string>
+    <string name="phone_quick_open">打开处理</string>
+    <string name="phone_quick_all_options">共 %1$d 个选项 · 点卡片查看</string>
+    <string name="phone_section_agents">Agent</string>
+    <string name="phone_section_recent">最近完成</string>
+    <string name="phone_empty_agents">还没有 Agent 上报状态</string>
+    <string name="phone_empty_recent">任务完成后会显示在这里</string>
+    <string name="phone_agents_online">%1$d 个在线</string>
+    <string name="phone_agents_busy">%1$d 个工作中</string>
+    <string name="phone_server_line">%1$s · 协议 v%2$d</string>
+    <string name="phone_status_reconnect">重新连接</string>
+    <string name="phone_status_settings">检查配置</string>
+    <string name="phone_settings_title">设置</string>
+    <string name="phone_settings_connection">连接</string>
+    <string name="phone_settings_form">连接配置</string>
+    <string name="phone_settings_device">设备信息</string>
+    <string name="phone_settings_notifications">通知权限</string>
+    <string name="phone_settings_notifications_on">已开启</string>
+    <string name="phone_settings_notifications_off">未开启</string>
+    <string name="phone_settings_security">安全</string>
+    <string name="phone_settings_security_body">Token 只以 Android Keystore 加密后的密文保存。外网部署请使用 wss://，并为每台设备签发独立 Token。</string>
+    <string name="phone_label_protocol">协议版本</string>
+    <string name="phone_label_server_name">服务器名称</string>
+    <string name="phone_label_notify_state">通知</string>
+    <string name="phone_action_save">保存并连接</string>
+    <string name="phone_action_disconnect">断开连接</string>
+    <string name="phone_request_agent">发起方</string>
+    <string name="phone_request_expiry">有效期</string>
+    <string name="phone_request_risk">风险</string>
+    <string name="phone_offline_pill">离线</string>
+    <string name="phone_online_pill">在线</string>
+    <string name="phone_quick_action_failed">未连接，请稍后重试</string>
+    <string name="phone_last_updated">更新于 %1$s</string>
+    <string name="phone_content_desc_settings">打开设置</string>
+</resources>

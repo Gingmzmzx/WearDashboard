@@ -1,5 +1,5 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <string name="app_name">Watch Agent</string>
+    <string name="app_name">WearDashboard</string>
 
     <string name="status_online">已连接</string>
     <string name="status_connecting">连接中</string>

@@ -2,7 +2,65 @@ plugins {
     alias(libs.plugins.android.application)
 }
 
+def localProperties = new Properties()
+def localPropertiesFile = rootProject.file("local.properties")
+if (localPropertiesFile.exists()) {
+    localProperties.load(new FileInputStream(localPropertiesFile))
+}
+def releaseStoreFile = localProperties.getProperty("release.storeFile")
+def releaseStorePassword = localProperties.getProperty("release.storePassword")
+def releaseKeyAlias = localProperties.getProperty("release.keyAlias")
+def releaseKeyPassword = localProperties.getProperty("release.keyPassword")
+def hasReleaseSigning = releaseStoreFile && releaseStorePassword && releaseKeyAlias && releaseKeyPassword
+
+// versionCode = yyMMdd + two-digit daily build number. Only release-like
+// builds consume a number; Debug builds and IDE sync do not.
+def versionStateFile = rootProject.file(".version.properties")
+def versionState = new Properties()
+if (versionStateFile.exists()) {
+    versionState.load(new FileInputStream(versionStateFile))
+}
+def releaseBuildRequested = gradle.startParameter.taskNames.any { raw ->
+    def name = raw.toLowerCase(Locale.ROOT)
+    name = name.substring(name.lastIndexOf(':') + 1)
+    ["build", "assemble", "bundle", "assemblerelease", "bundlerelease",
+     "installrelease", "packagerelease"].contains(name)
+}
+if (releaseBuildRequested && !gradle.startParameter.isDryRun()
+        && !project.hasProperty("versionCode")) {
+    def today = java.time.LocalDate.now()
+            .format(java.time.format.DateTimeFormatter.ofPattern("yyMMdd"))
+    int index = versionState.getProperty("date", "") == today
+            ? (versionState.getProperty("index", "0") as int) : 0
+    index++
+    if (index > 99) {
+        throw new GradleException("Daily build limit of 99 exceeded for " + today)
+    }
+    def code = today + String.format("%02d", index)
+    versionState.setProperty("date", today)
+    versionState.setProperty("index", String.format("%02d", index))
+    versionState.setProperty("versionCode", code)
+    versionStateFile.parentFile.mkdirs()
+    versionStateFile.withWriter { writer ->
+        versionState.store(writer, "Auto-managed by app/build.gradle. Do not edit during a build.")
+    }
+}
+def appVersionCode = (project.findProperty("versionCode")
+        ?: versionState.getProperty("versionCode", "1")).toString().toInteger()
+def appVersionName = (project.findProperty("versionName") ?: "v1.0.0").toString()
+
 android {
+    signingConfigs {
+        release {
+            if (hasReleaseSigning) {
+                storeFile rootProject.file(releaseStoreFile)
+                storePassword releaseStorePassword
+                keyAlias releaseKeyAlias
+                keyPassword releaseKeyPassword
+            }
+        }
+    }
+
     namespace 'com.netessx.watchdashboard'
     compileSdk {
         version = release(36) {
@@ -14,14 +72,17 @@ android {
         applicationId "com.netessx.watchdashboard"
         minSdk 24
         targetSdk 36
-        versionCode 1
-        versionName "1.0"
+        versionCode appVersionCode
+        versionName appVersionName
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
     buildTypes {
         release {
+            if (hasReleaseSigning) {
+                signingConfig signingConfigs.release
+            }
             optimization {
                 enable false
             }
